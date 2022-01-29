@@ -14,18 +14,18 @@ namespace dotnetRPG.Services.CharacterService
             new Character(),
             new Character { Id = 1, Name = "Sam"}
         };
-        public List<Character> AddCharacter(Character newCharacter)
+        public async Task<List<Character>> AddCharacter(Character newCharacter)
         {
             characters.Add(newCharacter);
             return characters;
         }
 
-        public Character GetCharaterbyID(int id)
+        public async Task<Character> GetCharaterbyID(int id)
         {
             return characters.FirstOrDefault(c => c.Id == id);
         }
 
-        public List<Character> GetAllCharacters()
+        public async Task<List<Character>> GetAllCharacters()
         {
             return characters;
         }
